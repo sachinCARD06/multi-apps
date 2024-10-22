@@ -1,0 +1,20 @@
+{
+  "name": "multi-apps",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev:app-one": "yarn workspace app-one dev",
+    "dev:app-two": "yarn workspace app-two dev",
+    "build:app-one": "yarn workspace app-one build",
+    "build:app-two": "yarn workspace app-two build",
+    "dev:all": "concurrently 'yarn workspace app-one dev' 'yarn workspace app-two dev'"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
